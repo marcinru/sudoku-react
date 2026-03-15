@@ -1,223 +1,31 @@
+import { Cell } from './Cell';
+
 export function Board() {
+  const cells = [
+    [5, 7, null, 1, 8, null, null, null, 3],
+    [null, 8, 6, null, null, null, 4, null, 2],
+    [null, 9, 2, 6, 7, null, 8, null, null],
+    [null, 1, null, 8, 6, 3, null, 4, 7],
+    [4, 2, null, null, 1, null, null, null, null],
+    [null, null, 7, null, 2, null, 1, 9, null],
+    [7, null, 3, 2, 9, 8, 5, 1, 6],
+    [null, null, null, 5, null, null, null, 8, 4],
+    [8, 5, null, 7, null, 6, null, null, 9],
+  ];
+
   return (
     <table id="board">
       <colgroup span={3}></colgroup>
       <colgroup span={3}></colgroup>
       <colgroup span={3}></colgroup>
       <tbody>
-        <tr>
-          <td className="given-number">5</td>
-          <td className="given-number">7</td>
-          <td>
-            <span className="candidates"></span>
-            <span className="value"></span>
-          </td>
-          <td className="given-number">1</td>
-          <td className="given-number">8</td>
-          <td>
-            <span className="candidates"></span>
-            <span className="value"></span>
-          </td>
-          <td>
-            <span className="candidates"></span>
-            <span className="value"></span>
-          </td>
-          <td>
-            <span className="candidates"></span>
-            <span className="value"></span>
-          </td>
-          <td className="given-number">3</td>
-        </tr>
-        <tr>
-          <td>
-            <span className="candidates"></span>
-            <span className="value"></span>
-          </td>
-          <td className="given-number">8</td>
-          <td className="given-number">6</td>
-          <td>
-            <span className="candidates"></span>
-            <span className="value"></span>
-          </td>
-          <td>
-            <span className="candidates"></span>
-            <span className="value"></span>
-          </td>
-          <td>
-            <span className="candidates"></span>
-            <span className="value"></span>
-          </td>
-          <td className="given-number">4</td>
-          <td>
-            <span className="candidates"></span>
-            <span className="value"></span>
-          </td>
-          <td className="given-number">2</td>
-        </tr>
-        <tr>
-          <td>
-            <span className="candidates"></span>
-            <span className="value"></span>
-          </td>
-          <td className="given-number">9</td>
-          <td className="given-number">2</td>
-          <td className="given-number">6</td>
-          <td className="given-number">7</td>
-          <td>
-            <span className="candidates"></span>
-            <span className="value"></span>
-          </td>
-          <td className="given-number">8</td>
-          <td>
-            <span className="candidates"></span>
-            <span className="value"></span>
-          </td>
-          <td>
-            <span className="candidates"></span>
-            <span className="value"></span>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <span className="candidates"></span>
-            <span className="value"></span>
-          </td>
-          <td className="given-number">1</td>
-          <td>
-            <span className="candidates"></span>
-            <span className="value"></span>
-          </td>
-          <td className="given-number">8</td>
-          <td className="given-number">6</td>
-          <td className="given-number">3</td>
-          <td>
-            <span className="candidates"></span>
-            <span className="value"></span>
-          </td>
-          <td className="given-number">4</td>
-          <td className="given-number">7</td>
-        </tr>
-        <tr>
-          <td className="given-number">4</td>
-          <td className="given-number">2</td>
-          <td>
-            <span className="candidates"></span>
-            <span className="value"></span>
-          </td>
-          <td>
-            <span className="candidates"></span>
-            <span className="value"></span>
-          </td>
-          <td className="given-number">1</td>
-          <td>
-            <span className="candidates"></span>
-            <span className="value"></span>
-          </td>
-          <td>
-            <span className="candidates"></span>
-            <span className="value"></span>
-          </td>
-          <td>
-            <span className="candidates"></span>
-            <span className="value"></span>
-          </td>
-          <td>
-            <span className="candidates"></span>
-            <span className="value"></span>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <span className="candidates"></span>
-            <span className="value"></span>
-          </td>
-          <td>
-            <span className="candidates"></span>
-            <span className="value"></span>
-          </td>
-          <td className="given-number">7</td>
-          <td>
-            <span className="candidates"></span>
-            <span className="value"></span>
-          </td>
-          <td className="given-number">2</td>
-          <td>
-            <span className="candidates"></span>
-            <span className="value"></span>
-          </td>
-          <td className="given-number">1</td>
-          <td className="given-number">9</td>
-          <td>
-            <span className="candidates"></span>
-            <span className="value"></span>
-          </td>
-        </tr>
-        <tr>
-          <td className="given-number">7</td>
-          <td>
-            <span className="candidates"></span>
-            <span className="value"></span>
-          </td>
-          <td className="given-number">3</td>
-          <td className="given-number">2</td>
-          <td className="given-number">9</td>
-          <td className="given-number">8</td>
-          <td className="given-number">5</td>
-          <td className="given-number">1</td>
-          <td className="given-number">6</td>
-        </tr>
-        <tr>
-          <td>
-            <span className="candidates"></span>
-            <span className="value"></span>
-          </td>
-          <td>
-            <span className="candidates"></span>
-            <span className="value"></span>
-          </td>
-          <td>
-            <span className="candidates"></span>
-            <span className="value"></span>
-          </td>
-          <td className="given-number">5</td>
-          <td>
-            <span className="candidates"></span>
-            <span className="value"></span>
-          </td>
-          <td>
-            <span className="candidates"></span>
-            <span className="value"></span>
-          </td>
-          <td>
-            <span className="candidates"></span>
-            <span className="value"></span>
-          </td>
-          <td className="given-number">8</td>
-          <td className="given-number">4</td>
-        </tr>
-        <tr>
-          <td className="given-number">8</td>
-          <td className="given-number">5</td>
-          <td>
-            <span className="candidates"></span>
-            <span className="value"></span>
-          </td>
-          <td className="given-number">7</td>
-          <td>
-            <span className="candidates"></span>
-            <span className="value"></span>
-          </td>
-          <td className="given-number">6</td>
-          <td>
-            <span className="candidates"></span>
-            <span className="value"></span>
-          </td>
-          <td>
-            <span className="candidates"></span>
-            <span className="value"></span>
-          </td>
-          <td className="given-number">9</td>
-        </tr>
+        {cells.map((row) => (
+          <tr>
+            {row.map((cell) => (
+              <Cell givenNumber={cell} />
+            ))}
+          </tr>
+        ))}
       </tbody>
     </table>
   );
