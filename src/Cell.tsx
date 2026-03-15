@@ -1,13 +1,15 @@
 interface CellProps {
   givenNumber: number | null;
+  isSelected: boolean;
+  onClick: () => void;
 }
 
 export function Cell(props: CellProps) {
-  const { givenNumber } = props;
+  const { givenNumber, isSelected, onClick } = props;
 
   if (givenNumber == null) {
     return (
-      <td>
+      <td className={isSelected ? 'selected' : undefined} onClick={onClick}>
         <span className="candidates"></span>
         <span className="value"></span>
       </td>
