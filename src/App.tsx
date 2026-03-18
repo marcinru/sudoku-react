@@ -1,11 +1,11 @@
 import { Board } from './Board';
 import { Controls } from './Controls';
 import { useState } from 'react';
-import { cells } from './cells';
-import type { Cells } from './cells';
+import { cells } from './cellNumbers.ts';
+import type { CellNumbers } from './cellNumbers.ts';
 
 function App() {
-  const [board] = useState<Cells>(cells);
+  const [board] = useState<CellNumbers>(cells);
 
   const onControlClick = (num: number) => {
     console.log(num);

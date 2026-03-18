@@ -1,9 +1,9 @@
-import type { Cells } from './cells';
+import type { CellNumbers } from './cellNumbers.ts';
 import { Cell } from './Cell';
 import { useState } from 'react';
 
 interface BoardProps {
-  board: Cells;
+  board: CellNumbers;
 }
 
 export function Board({ board }: BoardProps) {
