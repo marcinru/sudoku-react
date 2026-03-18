@@ -1,4 +1,4 @@
-import type { Cells } from './App';
+import type { Cells } from './cells';
 import { Cell } from './Cell';
 import { useState } from 'react';
 
