@@ -1,9 +1,9 @@
-import type { CellNumbers } from './cellNumbers.ts';
-import { Cell } from './Cell';
-import { useState } from 'react';
+import type {Cell} from './App';
+import {useState} from 'react';
+import {SudokuCell} from "./SudokuCell.tsx";
 
 interface BoardProps {
-  board: CellNumbers;
+  board: Cell[][];
 }
 
 export function Board({ board }: BoardProps) {
@@ -24,8 +24,8 @@ export function Board({ board }: BoardProps) {
         {board.map((row, i) => (
           <tr key={`row${i}`}>
             {row.map((cell, j) => (
-              <Cell
-                givenNumber={cell}
+              <SudokuCell
+                cell={cell}
                 isSelected={selectedRow === i && selectedCol === j}
                 onClick={() => onCellClick(i, j)}
                 key={`cell${i}${j}`}

@@ -1,6 +1,6 @@
 export type CellNumbers = (number | null)[][];
 
-export const cells: CellNumbers = [
+export const cellNumbers: CellNumbers = [
   [5, 7, null, 1, 8, null, null, null, 3],
   [null, 8, 6, null, null, null, 4, null, 2],
   [null, 9, 2, 6, 7, null, 8, null, null],
