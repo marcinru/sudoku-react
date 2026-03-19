@@ -1,20 +1,19 @@
-import type {Cell} from './App';
-import {useState} from 'react';
-import {SudokuCell} from "./SudokuCell.tsx";
+import type { Cell } from './App';
+import { SudokuCell } from './SudokuCell.tsx';
 
 interface BoardProps {
   board: Cell[][];
+  selectedRow: number | null;
+  selectedCol: number | null;
+  onCellClick: (i: number, j: number) => void;
 }
 
-export function Board({ board }: BoardProps) {
-  const [selectedRow, setSelectedRow] = useState<number | null>(null);
-  const [selectedCol, setSelectedCol] = useState<number | null>(null);
-
-  const onCellClick = (i: number, j: number) => {
-    setSelectedRow(i);
-    setSelectedCol(j);
-  };
-
+export function Board({
+  board,
+  selectedRow,
+  selectedCol,
+  onCellClick,
+}: BoardProps) {
   return (
     <table id="board">
       <colgroup span={3}></colgroup>

@@ -15,7 +15,7 @@ export function SudokuCell(props: SudokuCellProps) {
     return (
       <td className={isSelected ? 'selected' : undefined} onClick={onClick}>
         <span className="candidates">{cell.candidates.join(', ')}</span>
-        <span className="value"></span>
+        <span className="value">{cell.value}</span>
       </td>
     );
   }
