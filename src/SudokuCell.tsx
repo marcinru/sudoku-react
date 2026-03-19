@@ -1,9 +1,7 @@
+import type { Cell } from './App.tsx';
+
 interface SudokuCellProps {
-  cell: {
-    value: number | null;
-    candidates: number[];
-    isReadOnly: boolean;
-  };
+  cell: Cell;
   isSelected: boolean;
   onClick: () => void;
 }
@@ -11,20 +9,13 @@ interface SudokuCellProps {
 export function SudokuCell(props: SudokuCellProps) {
   const { cell, isSelected, onClick } = props;
 
-  if (cell.value == null) {
+  if (cell.isReadOnly) {
+    return <td className="given-number">{cell.value}</td>;
+  } else {
     return (
       <td className={isSelected ? 'selected' : undefined} onClick={onClick}>
         <span className="candidates">{cell.candidates.join(', ')}</span>
         <span className="value"></span>
-      </td>
-    );
-  } else {
-    return (
-      <td
-        className={cell.isReadOnly ? 'given-number' : isSelected ? 'selected' : undefined}
-        onClick={onClick}
-      >
-        {cell.value}
       </td>
     );
   }
