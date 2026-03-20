@@ -21,10 +21,11 @@ function App() {
   const [board, setBoard] = useState<Cell[][]>(initialCells);
   const [selectedRow, setSelectedRow] = useState<number | null>(null);
   const [selectedCol, setSelectedCol] = useState<number | null>(null);
+  const [isCandidateMove, setIsCandidateMove] = useState(false);
 
   const onControlClick = (num: number) => {
     if (selectedRow === null || selectedCol === null) return;
-
+    //TODO: handle candidate move
     const newBoard = board.map((row, i) =>
       row.map((cell, j) => {
         if (i === selectedRow && j === selectedCol) {
@@ -34,6 +35,10 @@ function App() {
       }),
     );
     setBoard(newBoard);
+  };
+
+  const onCandidateSwitchChange = () => {
+    setIsCandidateMove(!isCandidateMove);
   };
 
   const onCellClick = (i: number, j: number) => {
@@ -49,7 +54,11 @@ function App() {
         selectedCol={selectedCol}
         onCellClick={onCellClick}
       />
-      <Controls onClick={onControlClick} />
+      <Controls
+        isCandidateMove={isCandidateMove}
+        onCandidateSwitchChange={onCandidateSwitchChange}
+        onClick={onControlClick}
+      />
     </div>
   );
 }

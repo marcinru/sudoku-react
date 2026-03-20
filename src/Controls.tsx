@@ -1,10 +1,16 @@
 const numbers = Array.from({ length: 9 }, (_, i) => i + 1);
 
 interface ControlsProps {
+  isCandidateMove: boolean;
+  onCandidateSwitchChange: () => void;
   onClick: (num: number) => void;
 }
 
-export function Controls({ onClick }: ControlsProps) {
+export function Controls({
+  isCandidateMove,
+  onCandidateSwitchChange,
+  onClick,
+}: ControlsProps) {
   return (
     <div id="controls">
       <div id="number-controls">
@@ -24,6 +30,8 @@ export function Controls({ onClick }: ControlsProps) {
         id="candidate-switch"
         type="checkbox"
         aria-label="Is candidate move"
+        checked={isCandidateMove}
+        onChange={onCandidateSwitchChange}
       />
     </div>
   );
