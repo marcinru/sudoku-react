@@ -25,10 +25,16 @@ function App() {
 
   const onControlClick = (num: number) => {
     if (selectedRow === null || selectedCol === null) return;
-    //TODO: handle candidate move
     const newBoard = board.map((row, i) =>
       row.map((cell, j) => {
         if (i === selectedRow && j === selectedCol) {
+          if (isCandidateMove) {
+            const exists = cell.candidates.includes(num);
+            const candidates = exists
+              ? cell.candidates.filter((c) => c !== num)
+              : [...cell.candidates, num];
+            return { ...cell, candidates: candidates.sort() };
+          }
           return { ...cell, value: num };
         }
         return cell;
