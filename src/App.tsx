@@ -53,7 +53,7 @@ function App() {
   };
 
   return (
-    <div id="wrapper">
+    <div id="wrapper" className="p-8">
       <Board
         board={board}
         selectedRow={selectedRow}
